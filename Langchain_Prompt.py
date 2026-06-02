@@ -2,7 +2,7 @@ from langchain_groq import ChatGroq
 import streamlit as st
 from langchain_core.prompts import PromptTemplate
 model = ChatGroq(model = "llama-3.3-70b-versatile",
-                 api_key = "YOUR-API-KEY")
+                 api_key = st.secrets["GROQ_API_KEY"])
 
 st.header(" Asking for tv features ")
 Input1 = st.selectbox(" select Which company TV you need know about ",["Samsung","LG","Sony","1+"])
