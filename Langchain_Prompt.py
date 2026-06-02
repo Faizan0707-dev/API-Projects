@@ -17,12 +17,12 @@ st.text("Tap ask for output")
 button = st.button("Ask")
 if button:
     st.success(" Wait for just a sec")
-    prompt = template.format(
-        
-            company = Input1,
-            feature = Input2,
-            length = Input3
-        
+    prompt = template.invoke(
+        {
+            "company" : Input1,
+            "feature" : Input2,
+            "length" : Input3
+        }
     )
     responce = model.invoke(prompt)
     st.write(responce.content)
